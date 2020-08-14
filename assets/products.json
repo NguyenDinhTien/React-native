@@ -1,0 +1,44 @@
+{
+    "products": [
+        {
+            "id":1,
+            "images":[
+                {
+                    "url":"https://daynauan.info.vn/wp-content/uploads/2019/05/cach-trang-tri-mon-au.jpg"
+                }
+            ],
+            "name":"Bánh ngọt",
+            "price":"20000"
+        },
+        {
+            "id":2,
+            "images":[
+                {
+                    "url":"https://daynauan.info.vn/wp-content/uploads/2019/05/cach-trang-tri-mon-au.jpg"
+                }
+            ],
+            "name":"Bánh ngọt",
+            "price":"20000"
+        },
+        {
+            "id":3,
+            "images":[
+                {
+                    "url":"https://daynauan.info.vn/wp-content/uploads/2019/05/cach-trang-tri-mon-au.jpg"
+                }
+            ],
+            "name":"Bánh ngọt",
+            "price":"20000"
+        },
+        {
+            "id":4,
+            "images":[
+                {
+                    "url":"https://daynauan.info.vn/wp-content/uploads/2019/05/cach-trang-tri-mon-au.jpg"
+                }
+            ],
+            "name":"Bánh ngọt",
+            "price":"20000"
+        }
+    ]
+}
