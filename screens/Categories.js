@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { FlatList, StyleSheet } from 'react-native';
 import CategoryListItems from '../components/CategoryListItems';
-
-const data = require('../assets/data.json');
+//const data = require('../assets/data.json');
 
 export default function Categories({ navigation }) {
 
-  
-  const [dataCategoryList, setDataCategoryList] = React.useState(data.categoryList);
-  
+  // const [dataCategoryList, setDataCategoryList] = React.useState(data.categoryList);
+  const [dataCategoryList, setDataCategoryList] = React.useState([]);
 
+  useEffect(() => {
+    axios.get('http://192.168.1.6:3000/categoryList')
+        .then(res=>{
+          setDataCategoryList(res.data)
+        })
+        .catch(err=>{
+          console.log(err);
+        })
+      
+  }, []);
 
   return (
     <FlatList
@@ -17,7 +26,7 @@ export default function Categories({ navigation }) {
       renderItem={({ item }) =>
         <CategoryListItems
           category={item}
-          onPress={() => navigation.navigate('Category',{title: item.title})}
+          onPress={() => navigation.navigate('Category', { title: item.title })}
         />}
       keyExtractor={(item) => `${item.id}`}
       contentContainerStyle={{ paddingLeft: 16, paddingRight: 16 }}
