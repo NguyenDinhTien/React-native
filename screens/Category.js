@@ -3,19 +3,22 @@ import axios from 'axios';
 import { FlatList, StyleSheet, Tex, View } from 'react-native';
 import ProductListItem from '../components/ProductListItem';
 
-const data = require('../assets/products.json');
+//const data = require('../assets/products.json');
 
 
 export default function Category({ route, navigation }) {
 
   // const [productList, setProductList] = React.useState(data.products);
-  const [productList, setProductList] = React.useState(data.products);
+  const [productList, setProductList] = React.useState([]);
 
   const { title } = route.params;
+  const {categoryId}=route.params;
+  
+
   navigation.setOptions({ title: title });
 
   useEffect(() => {
-    axios.get('http://192.168.1.6:3000/products')
+    axios.get(`http://192.168.1.6:3000/products?category=${categoryId}`)
         .then(res=>{
           setProductList(res.data)
         })

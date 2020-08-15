@@ -10,7 +10,7 @@ const CategoryListItems = (props) => {
 
     return (
         <TouchableOpacity
-            activeOpacity={0}
+            activeOpacity={0.5}
             onPress={onPress}
         >
             <View style={styles.container}>

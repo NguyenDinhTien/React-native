@@ -26,7 +26,7 @@ export default function Categories({ navigation }) {
       renderItem={({ item }) =>
         <CategoryListItems
           category={item}
-          onPress={() => navigation.navigate('Category', { title: item.title })}
+          onPress={() => navigation.navigate('Category', { title: item.title,categoryId:item.id })}
         />}
       keyExtractor={(item) => `${item.id}`}
       contentContainerStyle={{ paddingLeft: 16, paddingRight: 16 }}
