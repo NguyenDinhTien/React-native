@@ -18,7 +18,7 @@ export default function Category({ route, navigation }) {
   navigation.setOptions({ title: title });
 
   useEffect(() => {
-    axios.get(`http://192.168.1.6:3000/products?category=${categoryId}`)
+    axios.get(`/products?category=${categoryId}`)
         .then(res=>{
           setProductList(res.data)
         })

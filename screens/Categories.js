@@ -10,7 +10,7 @@ export default function Categories({ navigation }) {
   const [dataCategoryList, setDataCategoryList] = React.useState([]);
 
   useEffect(() => {
-    axios.get('http://192.168.1.6:3000/categoryList')
+    axios.get('/categoryList')
         .then(res=>{
           setDataCategoryList(res.data)
         })
