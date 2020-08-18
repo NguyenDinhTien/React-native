@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext} from 'react';
 import axios from 'axios';
 import { FlatList, StyleSheet, Tex, View } from 'react-native';
 import ProductListItem from '../components/ProductListItem';
+import UserContext from '../UserContext';
 
 //const data = require('../assets/products.json');
 
@@ -9,7 +10,9 @@ import ProductListItem from '../components/ProductListItem';
 export default function Category({ route, navigation }) {
 
   // const [productList, setProductList] = React.useState(data.products);
-  const [productList, setProductList] = React.useState([]);
+  const handleBuyProduct = useContext(UserContext);
+
+  const [productList, setProductList] = useState([]);
 
   const { title } = route.params;
   const {categoryId}=route.params;
@@ -18,15 +21,24 @@ export default function Category({ route, navigation }) {
   navigation.setOptions({ title: title });
 
   useEffect(() => {
+    
     axios.get(`/products?category=${categoryId}`)
         .then(res=>{
-          setProductList(res.data)
+          setProductList(res.data);
+          
         })
         .catch(err=>{
           console.log(err);
         })
       
   }, []);
+
+
+  // send data product to app
+  function handlePressCart(data) {
+    if(!handleBuyProduct) return;
+    handleBuyProduct(data);
+  };
 
   return (
     <FlatList
@@ -35,7 +47,7 @@ export default function Category({ route, navigation }) {
       numColumns={2}
       renderItem={({ item }) =>
       <View style={styles.wrapper}>
-         <ProductListItem product={item} />
+         <ProductListItem product={item} onAddToCartClick={handlePressCart} />
       </View>
       }
       keyExtractor={(item) => `${item.id}`}

@@ -1,67 +1,198 @@
 {
-    "categoryList": [
+  "categoryList": [
+    {
+      "id": 1,
+      "title": "Món Khai Vị"
+    },
+    {
+      "id": 2,
+      "title": "Món Chính"
+    },
+    {
+      "id": 3,
+      "title": "Món Tráng Miệng"
+    },
+    {
+      "id": 4,
+      "title": "Thức Uống"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "images": [
         {
-            "id":1,
-            "title": "Món Khai Vị"
-        },
-        {
-            "id":2,
-            "title": "Món Chính"
-        },
-        {
-            "id":3,
-            "title": "Món Tráng Miệng"
-        },
-        {
-            "id":4,
-            "title": "Thức Uống"
+          "url": "https://daynauan.info.vn/wp-content/uploads/2019/05/cach-trang-tri-mon-au.jpg"
         }
-    ],
-    "products": [
+      ],
+      "name": "Bánh ngọt",
+      "price": "20000",
+      "category": 1
+    },
+    {
+      "id": 2,
+      "images": [
         {
-            "id":1,
-            "images":[
-                {
-                    "url":"https://daynauan.info.vn/wp-content/uploads/2019/05/cach-trang-tri-mon-au.jpg"
-                }
-            ],
-            "name":"Bánh ngọt",
-            "price":"20000",
-            "category":1
-        },
-        {
-            "id":2,
-            "images":[
-                {
-                    "url":"https://daynauan.info.vn/wp-content/uploads/2019/05/cach-trang-tri-mon-au.jpg"
-                }
-            ],
-            "name":"Bánh ngọt",
-            "price":"20000",
-            "category":2
-            
-        },
-        {
-            "id":3,
-            "images":[
-                {
-                    "url":"https://daynauan.info.vn/wp-content/uploads/2019/05/cach-trang-tri-mon-au.jpg"
-                }
-            ],
-            "name":"Bánh ngọt",
-            "price":"20000",
-            "category":1
-        },
-        {
-            "id":4,
-            "images":[
-                {
-                    "url":"https://daynauan.info.vn/wp-content/uploads/2019/05/cach-trang-tri-mon-au.jpg"
-                }
-            ],
-            "name":"Bánh ngọt",
-            "price":"20000",
-            "category":3
+          "url": "http://tiecngoaitroi.com/image/5cfe291997139675dfc5fe9a/big"
         }
-    ]
+      ],
+      "name": "Salad tôm trái cây",
+      "price": "30000",
+      "category": 1
+    },
+    {
+      "id": 3,
+      "images": [
+        {
+          "url": "http://tiecngoaitroi.com/image/5cfe294097139675dfc5fea3/big"
+        }
+      ],
+      "name": "Soup cua biển",
+      "price": "20000",
+      "category": 1
+    },
+    {
+      "id": 4,
+      "images": [
+        {
+          "url": "https://www.dulichvtv.vn/wp-content/uploads/mon-an-ngon-dai-loan-mi-bo.jpg"
+        }
+      ],
+      "name": "Mì Bò",
+      "price": "40000",
+      "category": 2
+    },
+    {
+      "id": 5,
+      "images": [
+        {
+          "url": "https://www.dulichvtv.vn/wp-content/uploads/mon-an-nhat-ban-hap-dan-khong-the-bo-qua-tonkatsu-thit-lon-chien-xu.jpg"
+        }
+      ],
+      "name": "Thịt Heo chiên xù",
+      "price": "35000",
+      "category": 2
+    },
+    {
+      "id": 6,
+      "images": [
+        {
+          "url": "https://www.dulichvtv.vn/wp-content/uploads/mon-an-dac-san-noi-tieng-o-nhat-ban-sushi.jpg"
+        }
+      ],
+      "name": "Sushi",
+      "price": "30000",
+      "category": 2
+    },
+    {
+      "id": 7,
+      "images": [
+        {
+          "url": "https://www.dulichvtv.vn/wp-content/uploads/thit-kho-dong-pha-trung-quoc.jpg"
+        }
+      ],
+      "name": "Thịt Kho",
+      "price": "30000",
+      "category": 2
+    },
+    {
+      "id": 8,
+      "images": [
+        {
+          "url": "https://massageishealthy.com/wp-content/uploads/2017/12/cac-loai-banh-trang-mieng-ngon-de-lam-1.jpg"
+        }
+      ],
+      "name": "Bánh chuối nướng",
+      "price": "10000",
+      "category": 3
+    },
+    {
+      "id": 9,
+      "images": [
+        {
+          "url": "https://massageishealthy.com/wp-content/uploads/2017/12/cac-loai-banh-trang-mieng-ngon-de-lam-2.jpg"
+        }
+      ],
+      "name": "Bánh trôi tàu",
+      "price": "15000",
+      "category": 3
+    },
+    {
+      "id": 10,
+      "images": [
+        {
+          "url": "https://massageishealthy.com/wp-content/uploads/2017/12/cac-loai-banh-trang-mieng-ngon-de-lam-3.jpg"
+        }
+      ],
+      "name": "Chè lá dứa",
+      "price": "15000",
+      "category": 3
+    },
+    {
+      "id": 11,
+      "images": [
+        {
+          "url": "https://massageishealthy.com/wp-content/uploads/2017/12/cac-loai-banh-trang-mieng-ngon-de-lam-4.jpg"
+        }
+      ],
+      "name": "Chè trái cây",
+      "price": "15000",
+      "category": 3
+    },
+    {
+      "id": 12,
+      "images": [
+        {
+          "url": "https://massageishealthy.com/wp-content/uploads/2017/12/cac-loai-banh-trang-mieng-ngon-de-lam-5.jpg"
+        }
+      ],
+      "name": "Bánh Chocola",
+      "price": "10000",
+      "category": 3
+    },
+    {
+      "id": 13,
+      "images": [
+        {
+          "url": "https://kenhphunu.com/images/082016/files/cocungcua/b1/sinh-to-1.jpg"
+        }
+      ],
+      "name": "Sửa tươi chanh",
+      "price": "10000",
+      "category": 4
+    },
+    {
+      "id": 14,
+      "images": [
+        {
+          "url": "https://kenhphunu.com/images/082016/files/cocungcua/b1/sinh-to-2.jpg"
+        }
+      ],
+      "name": "Sinh tố Cà Chua",
+      "price": "10000",
+      "category": 4
+    },
+    {
+      "id": 15,
+      "images": [
+        {
+          "url": "https://kenhphunu.com/images/082016/files/cocungcua/b1/sinh-to-3.jpg"
+        }
+      ],
+      "name": "Sinh tố Nho",
+      "price": "10000",
+      "category": 4
+    },
+    {
+      "id": 16,
+      "images": [
+        {
+          "url": "https://kenhphunu.com/images/082016/files/cocungcua/b1/sinh-to-4.jpg"
+        }
+      ],
+      "name": "Sinh tố Bưởi",
+      "price": "10000",
+      "category": 4
+    }
+  ]
 }
