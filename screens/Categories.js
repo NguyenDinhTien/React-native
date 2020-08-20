@@ -18,7 +18,7 @@ export default function Categories({ navigation }) {
           console.log(err);
         })
       
-  }, []);
+  },[]);
 
   return (
     <FlatList

@@ -67,9 +67,9 @@ export default function AppNavigator() {
         }}
     >
         <Tab.Screen name="Home" component={homeStackScreen} />
-        <Tab.Screen name="Settings" component={Settings} /> 
-        <Tab.Screen name="Order" component={Order} />
         <Tab.Screen name="Cart" component={Cart} />
+        <Tab.Screen name="Order" component={Order} />
+        <Tab.Screen name="Settings" component={Settings} /> 
     </Tab.Navigator>
   );
 }
