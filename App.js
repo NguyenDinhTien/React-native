@@ -4,8 +4,9 @@ import "react-native-gesture-handler";
 import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
-import AppNavigator from "./AppNavigator";
-
+import AppNavigator from "./src/AppNavigator";
+import {Provider} from 'react-redux';
+import store from './src/store';
 
 axios.defaults.baseURL = "http://192.168.1.14:3000";
 
@@ -23,14 +24,16 @@ export default function App() {
     newItemList.push(newItem);
     setItemList(newItemList);
   }
-  console.log(itemList);
+  
 
   const user = { name: "Tania", loggedIn: true };
   return (
-    
-      <NavigationContainer>
+    <Provider store = {store} >
+       <NavigationContainer>
         <AppNavigator />
       </NavigationContainer>
+    </Provider>
+     
     
   );
 }
