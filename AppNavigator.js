@@ -43,9 +43,11 @@ export default function AppNavigator() {
                 <Ionicons
                   name={
                     focused
-                      ? 'ios-information-circle'
-                      : 'ios-information-circle-outline'
+                      ? 'md-home'
+                      : 'md-home'
                   }
+
+                  
                   size={size}
                   color={color}
                 />
@@ -53,7 +55,25 @@ export default function AppNavigator() {
             } else if (route.name === 'Settings') {
               return (
                 <Ionicons
-                  name={focused ? 'ios-list-box' : 'ios-list'}
+                  name={focused ? 'md-settings' : 'md-settings'}
+                  size={size}
+                  color={color}
+                />
+              );
+            }
+            else if (route.name === 'Cart') {
+              return (
+                <Ionicons
+                  name={focused ? 'ios-cart' : 'ios-cart'}
+                  size={size}
+                  color={color}
+                />
+              );
+            }
+            else if (route.name === 'Order') {
+              return (
+                <Ionicons
+                  name={focused ? 'md-reorder' : 'md-reorder'}
                   size={size}
                   color={color}
                 />

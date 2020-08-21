@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
 import AppNavigator from "./AppNavigator";
-import { UserProvider } from "./UserContext";
+
 
 axios.defaults.baseURL = "http://192.168.1.14:3000";
 
@@ -27,11 +27,11 @@ export default function App() {
 
   const user = { name: "Tania", loggedIn: true };
   return (
-    <UserProvider value={handleBuyProduct}>
+    
       <NavigationContainer>
         <AppNavigator />
       </NavigationContainer>
-    </UserProvider>
+    
   );
 }
 

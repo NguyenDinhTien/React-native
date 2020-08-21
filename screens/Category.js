@@ -2,15 +2,13 @@ import React, { useState, useEffect,useContext} from 'react';
 import axios from 'axios';
 import { FlatList, StyleSheet, Tex, View } from 'react-native';
 import ProductListItem from '../components/ProductListItem';
-import UserContext from '../UserContext';
+
 
 //const data = require('../assets/products.json');
 
 
 export default function Category({ route, navigation }) {
 
-  // const [productList, setProductList] = React.useState(data.products);
-  const handleBuyProduct = useContext(UserContext);
 
   const [productList, setProductList] = useState([]);
 
