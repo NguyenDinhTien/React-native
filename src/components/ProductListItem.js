@@ -8,6 +8,9 @@ function formatPrice(num) {
 }
 
 const ProductListItem = (props) => {
+
+  
+
   const { product, onAddToCartClick } = props;
 
   function handlePressBuy(data){

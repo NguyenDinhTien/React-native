@@ -8,6 +8,7 @@ import AppNavigator from "./src/AppNavigator";
 import {Provider} from 'react-redux';
 import store from './src/store';
 
+// axios.defaults.baseURL = "http://192.168.1.3:3000";
 axios.defaults.baseURL = "http://192.168.1.14:3000";
 
 export default function App() {

@@ -2,7 +2,7 @@ import React, { useState, useEffect,useContext} from 'react';
 import axios from 'axios';
 import { FlatList, StyleSheet, Tex, View } from 'react-native';
 import ProductListItem from '../components/ProductListItem';
-
+import { addCartItem } from "../actions/cart";
 
 //const data = require('../assets/products.json');
 
@@ -32,11 +32,17 @@ export default function Category({ route, navigation }) {
   }, []);
 
 
-  // send data product to app
-  function handlePressCart(data) {
-    if(!handleBuyProduct) return;
-    handleBuyProduct(data);
+  
+  const handlePressBuy=(data)=>{
+    const action=addCartItem(data)
+    dispatchEvent(action);
   };
+
+  // send data product to app
+  // function handlePressCart(data) {
+  //   if(!handleBuyProduct) return;
+  //   handleBuyProduct(data);
+  // };
 
   return (
     <FlatList
@@ -45,7 +51,7 @@ export default function Category({ route, navigation }) {
       numColumns={2}
       renderItem={({ item }) =>
       <View style={styles.wrapper}>
-         <ProductListItem product={item} onAddToCartClick={handlePressCart} />
+         <ProductListItem product={item} onAddToCartClick={handlePressBuy} />
       </View>
       }
       keyExtractor={(item) => `${item.id}`}

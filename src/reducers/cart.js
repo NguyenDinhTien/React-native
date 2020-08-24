@@ -4,9 +4,9 @@ const initialState = {
   activeId: null,
 }
 
-const hobbyReducer = (state = initialState, action) => {
+const cartReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_HOBBY': {
+    case 'ADD_CART_ITEM': {
       const newList = [...state.list];
       newList.push(action.payload);
 
@@ -29,4 +29,4 @@ const hobbyReducer = (state = initialState, action) => {
   }
 }
 
-export default hobbyReducer;
+export default cartReducer;
