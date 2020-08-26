@@ -1,20 +1,7 @@
-export const addCartItem = (data) => {
+export const addCartItem = (item) => {
   return {
     type: "ADD_CART_ITEM",
-    payload: data,
+    payload: item,
   };
 };
 
-export const addNewHobby = (hobby) => {
-  return {
-    type: "ADD_HOBBY",
-    payload: hobby,
-  };
-};
-
-export const setActiveHobby = (hobby) => {
-  return {
-    type: "SET_ACTIVE_HOBBY",
-    payload: hobby,
-  };
-};

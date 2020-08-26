@@ -2,10 +2,10 @@ import React from "react";
 import { Text, Image, StyleSheet, TouchableOpacity, View } from "react-native";
 
 
-import khaivi from "../../assets/khaivi.png";
-import monchinh from "../../assets/monchinh.png";
-import trangmieng from "../../assets/trangmieng.png";
-import thucuong from "../../assets/thucuong.png";
+import khaivi from "../assets/khaivi.png";
+import monchinh from "../assets/monchinh.png";
+import trangmieng from "../assets/trangmieng.png";
+import thucuong from "../assets/thucuong.png";
 
 function showIconProcduct(id) {
   if (id == 1) return khaivi;

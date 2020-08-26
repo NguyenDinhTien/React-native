@@ -3,14 +3,9 @@ import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 import CartListItem from "../components/CartListItem";
 
-
-
-
-
 export default function Cart() {
-
-  const List = useSelector((state) => state.cart.list);
-  console.log(List);
+  const newItem = useSelector((state) => state.cart.list);
+  console.log("==============================================", newItem);
 
   return (
     <View>

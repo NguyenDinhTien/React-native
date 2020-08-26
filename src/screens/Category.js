@@ -1,42 +1,40 @@
-import React, { useState, useEffect,useContext} from 'react';
-import axios from 'axios';
-import { FlatList, StyleSheet, Tex, View } from 'react-native';
-import ProductListItem from '../components/ProductListItem';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { FlatList, StyleSheet, Tex, View } from "react-native";
+import ProductListItem from "../components/ProductListItem";
 import { addCartItem } from "../actions/cart";
-
+import { useSelector, useDispatch, shallowEqual } from "react-redux";
 //const data = require('../assets/products.json');
 
-
 export default function Category({ route, navigation }) {
-
-
   const [productList, setProductList] = useState([]);
 
   const { title } = route.params;
-  const {categoryId}=route.params;
-  
+  const { categoryId } = route.params;
 
   navigation.setOptions({ title: title });
 
   useEffect(() => {
-    
-    axios.get(`/products?category=${categoryId}`)
-        .then(res=>{
-          setProductList(res.data);
-          
-        })
-        .catch(err=>{
-          console.log(err);
-        })
-      
+    const fetchData = async () => {
+      try {
+        const result = await axios.get(`/products?category=${categoryId}`);
+        setProductList(result.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
   }, []);
 
+  //send dispatch to reducer
 
-  
-  const handlePressBuy=(data)=>{
-    const action=addCartItem(data)
-    dispatchEvent(action);
-  };
+  const dispatch = useDispatch();
+
+  function handlePressBuy(item) {
+    const action = addCartItem(item);
+    dispatch(action);
+   
+  }
 
   // send data product to app
   // function handlePressCart(data) {
@@ -49,11 +47,11 @@ export default function Category({ route, navigation }) {
       data={productList}
       contentContainerStyle={styles.container}
       numColumns={2}
-      renderItem={({ item }) =>
-      <View style={styles.wrapper}>
-         <ProductListItem product={item} onAddToCartClick={handlePressBuy} />
-      </View>
-      }
+      renderItem={({ item }) => (
+        <View style={styles.wrapper}>
+          <ProductListItem product={item} onAddToCartClick={handlePressBuy} />
+        </View>
+      )}
       keyExtractor={(item) => `${item.id}`}
     />
   );
@@ -61,11 +59,11 @@ export default function Category({ route, navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal:8,
-    paddingTop:16    
+    paddingHorizontal: 8,
+    paddingTop: 16,
   },
-  wrapper:{
-    flex:1,
-    paddingHorizontal:8
-  }
+  wrapper: {
+    flex: 1,
+    paddingHorizontal: 8,
+  },
 });

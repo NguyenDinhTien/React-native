@@ -27,7 +27,7 @@ export default function App() {
   }
   
 
-  const user = { name: "Tania", loggedIn: true };
+  
   return (
     <Provider store = {store} >
        <NavigationContainer>

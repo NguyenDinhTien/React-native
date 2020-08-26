@@ -4,6 +4,10 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { Ionicons } from '@expo/vector-icons';
 
 export default function CartListItem() {
+  
+  
+
+
   return (
     <View style={styles.shadow}>
       <View style={styles.container}>

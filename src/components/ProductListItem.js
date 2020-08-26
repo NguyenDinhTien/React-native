@@ -8,16 +8,19 @@ function formatPrice(num) {
 }
 
 const ProductListItem = (props) => {
-
-  
-
   const { product, onAddToCartClick } = props;
 
-  function handlePressBuy(data){
-    if(!onAddToCartClick) return;
-
-    onAddToCartClick(data)
+  function handlePressBuy(item){
+    if (!onAddToCartClick) return;
+    // const newItem={
+    //   quantity:1,
+    //   ...item
+    // }
+    onAddToCartClick(item);
+    
   };
+
+  
 
   return (
     <View style={styles.shadow}>
@@ -28,7 +31,9 @@ const ProductListItem = (props) => {
           <Text style={styles.name}>{product.name}</Text>
           <View style={styles.priceRow}>
             <Text style={styles.price}>{formatPrice(product.price)}</Text>
-            <TouchableOpacity onPress={()=>{handlePressBuy(product)}}>
+            <TouchableOpacity
+              onPress={()=>handlePressBuy(product)}
+            >
               <Text style={styles.cartText}>Mua +</Text>
             </TouchableOpacity>
           </View>
