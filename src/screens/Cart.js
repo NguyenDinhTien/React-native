@@ -5,20 +5,27 @@ import CartListItem from "../components/CartListItem";
 
 export default function Cart() {
   const newItem = useSelector((state) => state.cart.list);
-  console.log("==============================================", newItem);
+  
 
   return (
-    <View>
-      <CartListItem />
-    </View>
+    <FlatList
+      data={newItem}
+      contentContainerStyle={styles.container}
+      renderItem={({ item }) => (
+        <View style={styles.wrapper}>
+          <CartListItem value={item} />
+        </View>
+      )}
+      //keyExtractor={(item) => `${item.id}`}
+      keyExtractor={(item, index) => String(index)}
+    />
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    
     backgroundColor: "#ffff",
-    alignItems: "stretch",
-    justifyContent: "center",
+    
   },
 });

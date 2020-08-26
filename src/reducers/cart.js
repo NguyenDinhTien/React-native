@@ -3,6 +3,8 @@ const initialState = {
 };
 
 const cartReducer = (state = initialState, action) => {
+
+  let newList=[...state.list]
   switch (action.type) {
     case "ADD_CART_ITEM": {
       const newList = [...state.list];

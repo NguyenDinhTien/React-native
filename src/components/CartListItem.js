@@ -3,33 +3,29 @@ import { View, Image, Text, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Ionicons } from '@expo/vector-icons';
 
-export default function CartListItem() {
+export default function CartListItem(props) {
   
-  
-
-
+ const cart= props;
+  console.log(cart.value);
   return (
     <View style={styles.shadow}>
       <View style={styles.container}>
         {/* <Image style={styles.img} source={{uri:products.images[0].url}} /> */}
         <Image
           style={styles.img}
-          source={{
-            uri:
-              "https://daynauan.info.vn/wp-content/uploads/2019/05/cach-trang-tri-mon-au.jpg",
-          }}
+          source={{ uri: cart.value.item.images[0].url }}
         />
         <View style={styles.info}>
-          <Text style={styles.name}>Bánh ngọt</Text>
+        <Text style={styles.name}>{cart.value.item.name}</Text>
           <View style={styles.priceRow}>
-            <Text style={styles.price}>5000</Text>
+            <Text style={styles.price}>{cart.value.item.price}</Text>
           </View>
         </View>
         <View style={styles.quantity}>
           <TouchableOpacity>
             <Ionicons name="ios-remove-circle" size={30} color={"#9fd236"} />
           </TouchableOpacity>
-          <Text style={{ paddingHorizontal: 8, fontWeight: "bold" }}>5</Text>
+  <Text style={{ paddingHorizontal: 8, fontWeight: "bold" }}>{cart.value.quantity}</Text>
           <TouchableOpacity>
             <Ionicons name="ios-add-circle" size={30} color={"#9fd236"} />
           </TouchableOpacity>
