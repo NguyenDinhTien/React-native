@@ -23,7 +23,7 @@ export default function CartListItem(props) {
           </View>
         </View>
         <View style={styles.quantity}>
-          <TouchableOpacity onPress={() => onChangeQuantity(cart, "decrease")}>
+          <TouchableOpacity  activeOpacity={0.7}  onPress={() => onChangeQuantity(cart, "decrease")}>
             <Ionicons name="ios-remove-circle" size={30} color={"#9fd236"} />
           </TouchableOpacity>
           <Text style={{ paddingHorizontal: 8, fontWeight: "bold" }}>
