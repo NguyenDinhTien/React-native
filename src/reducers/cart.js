@@ -2,25 +2,34 @@ const initialState = {
   list: [],
 };
 
-const cartReducer = (state = initialState, action) => {
+//const updateQuantity=item=>item.quantity?{...item,quantity:item.quantiy+1}:
 
-  let newList=[...state.list]
+const cartReducer = (state = initialState, action) => {
+  const list = [...state.list];
+
   switch (action.type) {
     case "ADD_CART_ITEM": {
-      const newList = [...state.list];
-      newList.push(action.payload);
-
+      list.push(action.payload);
       return {
         ...state,
-        list: newList,
+        list: list,
       };
     }
 
-    case "SET_QUANTITY_ITEM": {
-      const newActiveId = action.payload.id;
+    case "UPDATE_CART_QUANTITY": {
+      let item = list.find((e) => e.item.id == action.payload.productId);
+      if (action.payload.quantity == "increase") {
+        item.quantity++;
+      } else {
+        item.quantity--;
+      }
+      //let newList=list.filter(e=>e.item.id!=action.payload.productId);
+     //console.log(item.quantity);
+      //console.log('==============',state);
+      // // //console.log('================',action.payload.quantity);
       return {
         ...state,
-        activeId: newActiveId,
+        list: list,
       };
     }
 

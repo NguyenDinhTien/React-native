@@ -8,3 +8,13 @@ export const addCartItem = (item) => {
   };
 };
 
+export const updateQuantity =(productId,quantity)=>{
+  return{
+    type:"UPDATE_CART_QUANTITY",
+    payload:{
+      productId,
+      quantity:quantity
+    }
+  }
+};
+

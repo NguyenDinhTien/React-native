@@ -1,32 +1,35 @@
 import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
 
 export default function CartListItem(props) {
-  
- const cart= props;
-  console.log(cart.value);
+  const { cart, sendQuantity } = props;
+
+  function onChangeQuantity(data,change) {
+    if (!sendQuantity) return;
+    sendQuantity(data,change);
+    }
+
   return (
     <View style={styles.shadow}>
       <View style={styles.container}>
         {/* <Image style={styles.img} source={{uri:products.images[0].url}} /> */}
-        <Image
-          style={styles.img}
-          source={{ uri: cart.value.item.images[0].url }}
-        />
+        <Image style={styles.img} source={{ uri: cart.item.images[0].url }} />
         <View style={styles.info}>
-        <Text style={styles.name}>{cart.value.item.name}</Text>
+          <Text style={styles.name}>{cart.item.name}</Text>
           <View style={styles.priceRow}>
-            <Text style={styles.price}>{cart.value.item.price}</Text>
+            <Text style={styles.price}>{cart.item.price}</Text>
           </View>
         </View>
         <View style={styles.quantity}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => onChangeQuantity(cart, "decrease")}>
             <Ionicons name="ios-remove-circle" size={30} color={"#9fd236"} />
           </TouchableOpacity>
-  <Text style={{ paddingHorizontal: 8, fontWeight: "bold" }}>{cart.value.quantity}</Text>
-          <TouchableOpacity>
+          <Text style={{ paddingHorizontal: 8, fontWeight: "bold" }}>
+            {cart.quantity}
+          </Text>
+          <TouchableOpacity onPress={() => onChangeQuantity(cart, "increase")}>
             <Ionicons name="ios-add-circle" size={30} color={"#9fd236"} />
           </TouchableOpacity>
         </View>
@@ -42,8 +45,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 0 },
     elevation: 5,
     marginTop: 25,
-    backgroundColor:"whitesmoke",
-    marginHorizontal:16
+    backgroundColor: "whitesmoke",
+    marginHorizontal: 16,
   },
   container: {
     margin: 16,
@@ -60,7 +63,7 @@ const styles = StyleSheet.create({
   },
   info: {
     padding: 8,
-    flex:1
+    flex: 1,
   },
   name: {
     fontSize: 16,
@@ -80,9 +83,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#2f95dc",
   },
-  quantity:{
-    marginHorizontal:8,  
-    flexDirection:'row', 
-    alignItems:'center'
-  }
+  quantity: {
+    marginHorizontal: 8,
+    flexDirection: "row",
+    alignItems: "center",
+  },
 });
