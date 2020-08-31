@@ -1,26 +1,26 @@
 import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import currency from "../currentcy";
 
-function formatPrice(num) {
-  const price = num + `k`;
-  return price;
-}
+// function formatPrice(num) {
+//   const price= "₫ "+ num.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+//   //const price = num.toFixed(3);
+//   //const price = num + `k`;
+//   return price;
+// }
 
 const ProductListItem = (props) => {
   const { product, onAddToCartClick } = props;
 
-  function handlePressBuy(item){
+  function handlePressBuy(item) {
     if (!onAddToCartClick) return;
     // const newItem={
     //   quantity:1,
     //   ...item
     // }
     onAddToCartClick(item);
-    
-  };
-
-  
+  }
 
   return (
     <View style={styles.shadow}>
@@ -30,10 +30,8 @@ const ProductListItem = (props) => {
         <View style={styles.info}>
           <Text style={styles.name}>{product.name}</Text>
           <View style={styles.priceRow}>
-            <Text style={styles.price}>{formatPrice(product.price)}</Text>
-            <TouchableOpacity
-              onPress={()=>handlePressBuy(product)}
-            >
+            <Text style={styles.price}>{currency(product.price)}</Text>
+            <TouchableOpacity onPress={() => handlePressBuy(product)}>
               <Text style={styles.cartText}>Mua +</Text>
             </TouchableOpacity>
           </View>
@@ -81,7 +79,7 @@ const styles = StyleSheet.create({
     textTransform: "uppercase",
     fontSize: 16,
     color: "#2f95dc",
-    shadowOpacity:0,
+    shadowOpacity: 0,
   },
 });
 

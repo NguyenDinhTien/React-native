@@ -2,6 +2,8 @@ import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
+import currency from "../currentcy"
+
 
 export default function CartListItem(props) {
   const { cart, sendQuantity } = props;
@@ -19,7 +21,7 @@ export default function CartListItem(props) {
         <View style={styles.info}>
           <Text style={styles.name}>{cart.item.name}</Text>
           <View style={styles.priceRow}>
-            <Text style={styles.price}>{cart.item.price}</Text>
+            <Text style={styles.price}>{currency(cart.item.price)}</Text>
           </View>
         </View>
         <View style={styles.quantity}>
