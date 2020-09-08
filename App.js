@@ -12,22 +12,7 @@ import store from './src/store';
 axios.defaults.baseURL = "http://192.168.1.14:3000";
 
 export default function App() {
-  const [itemList, setItemList] = useState([]);
-
-  function handleBuyProduct(data) {
-    const newItem = {
-      id: data.id,
-      name: data.name,
-      price: data.price,
-      quantity: 1,
-    };
-    const newItemList = [...itemList];
-    newItemList.push(newItem);
-    setItemList(newItemList);
-  }
-  
-
-  
+    
   return (
     <Provider store = {store} >
        <NavigationContainer>
